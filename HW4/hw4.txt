@@ -1,0 +1,32 @@
+After running the SAT solver on the 3-color graph, it is clear that
+the 3-color graph is UNSAT
+
+Converting and running the 4-color graph on the SAT solver shows us that
+a 4-color graph is SAT
+
+These answers show us that we need at least 4 colors to color the given graph such that
+no neighbors share the same color. This means that given less than 4 colors, we can 
+not produce a desired outcome where each neighbor has a different color, but given 4 or more, we 
+can always produce a valid solution. The reason behind this is because one of the nodes is connected to 3 other nodes that must be 
+different colors. in the example that i have provided below. We need to color 5 a 4th color, purple, because each of its neighbors 
+are already colored, and due to their neioghbors cannot be rearanged to be a new color such that node 5 does not need to be a 4th color.
+
+Basically what causes a graph the require 4 colors is that there must exist at least one node where each of its neighbors are constrained under 
+the 3-SAt problem, meaning that the sub graph not including this node can be colored with at least 3 colors, and so when we look at this node, since the
+rest of the graph requires 3 colors to be colored, adding a node that is connected the 3 other nodes of unique colors means that this new node must be a new
+4th color. So in the case below, if we remove node 5 we get a graph that is 3 colorable, but since it is connected to nodes each of a different color, we need
+a 4th color to be valid.
+
+A valid solution to 4-COLOR:
+
+node | color
+1   |   RED
+2   |   BLUE
+3   |   RED
+4   |   GREEN
+5   |   PURPLE
+6   |   BLUE
+7   |   GREEN
+
+The minimum number of colors required to color graph2.txt is 8 colors, as colors 1-7 are all unsat, and 8 colors is the first 
+option that gives us a SAT solution.

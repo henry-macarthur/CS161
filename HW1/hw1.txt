@@ -1,0 +1,77 @@
+1. As we increase the input value of the padovan sequence, the output becomes larger and larger. 
+    At the start of the sequence, the difference between PAD(3) and PAD(4) for example is quite
+    small, 5 - 3 = 4. As we increase our input x, this difference begins to grow exponentially, so for exampple
+    PAD(10) - PAD(9) = 193 - 105 = 88. And as we get to a slightly bigger x, for example PAD(15) - PAD(14) = 
+    4063 - 2209 = 1854. It is clear that the padovan squence grows at an exponential rate. The reason for this
+    is due to branching. for each node/number n in the sequence, we have to sum up the 3 previous padovan numbers, and those
+    3 require us to sum up its previous padovon numbers, and so on. So for each number, we create 3 branches to compute its value,
+    cleary making the growth of the sequence exponential. 
+
+Break 1 [15]> (PAD 1)
+1
+Break 1 [15]> (PAD 2)
+1
+Break 1 [15]> (PAD 3)
+3
+Break 1 [15]> (PAD 4)
+5
+Break 1 [15]> (PAD 5)
+9
+Break 1 [15]> (PAD 6)
+17
+Break 1 [15]> (PAD 7)
+31
+Break 1 [15]> (PAD 8)
+57
+Break 1 [15]> (PAD 9)
+105
+Break 1 [15]> (PAD 10)
+193
+Break 1 [15]> (PAD 19)
+46499
+Break 1 [15]> (PAD 20)
+85525
+
+
+2.) ---
+[3]> (SUMS 1)
+0
+[4]> (SUMS 2)
+0
+[5]> (SUMS 3)
+2
+[6]> (SUMS 4)
+4
+[7]> (SUMS 5)
+8
+[8]> (SUMS 6)
+16
+[9]> (SUMS 7)
+30
+[10]> (SUMS 8)
+56
+[11]> (SUMS 9)
+104
+[12]> (SUMS 10)
+192
+[13]> (SUMS 20)
+85524
+15]> (SUMS 22)
+289328
+
+3.) ---
+Break 1 [15]> (ANON '42)
+0
+Break 1 [15]> (ANON 'FOO)
+0
+Break 1 [15]> (ANON '(((L E) F) T))
+(((0 0) 0) 0)
+Break 1 [15]> (ANON '(5 FOO 3.1 -0.2))
+(0 0 0 0)
+Break 1 [15]> (ANON '(1 (FOO 3.1) -0.2))
+(0 (0 0) 0)
+Break 1 [15]> (ANON '(((1 2) (FOO 3.1)) (BAR -0.2)))
+(((0 0) (0 0)) (0 0))
+Break 1 [15]> (ANON '(R (I (G (H T)))))
+(0 (0 (0 (0 0))))
+
